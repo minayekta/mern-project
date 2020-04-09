@@ -1,13 +1,25 @@
 import React  from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom'
 import Users from './user/pages/Users';
-
+import NewPost from './posts/pages/NewPost';
+import MainNavigation from './shared/components/Navigation/MainNavigation'
+import UserPosts from './posts/pages/UserPosts';
 const App = () => {
   return(
       <Router>
-        <Route>
-          <Users path="/"/>
+      <MainNavigation/>
+      <Switch>
+        <Route  path="/" exact>
+          <Users/>
         </Route>
+        <Route path="/:userId/posts">
+          <UserPosts/>
+        </Route>
+        <Route  path="/posts/new" exact>
+          <NewPost/>
+        </Route>
+        <Redirect to="/"/>
+        </Switch>
       </Router>
   )
 }
