@@ -1,17 +1,14 @@
-import React from 'react'
-import './App.css'
-import ProductList from './components/ProductList'
+import React  from 'react'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import Users from './user/pages/Users';
+
 const App = () => {
-  const products = [
-    {id:1 , title: 'book1'},
-    {id:2 , title: 'book2'},
-    {id:3 , title: 'book3'}
-]
   return(
-    <div className="conntainer">
-      <h2> Book Store </h2>
-      <ProductList  items= {products}/>
-    </div>
+      <Router>
+        <Route>
+          <Users path="/"/>
+        </Route>
+      </Router>
   )
 }
 
