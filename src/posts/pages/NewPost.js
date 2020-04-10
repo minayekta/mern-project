@@ -1,8 +1,17 @@
 import React from 'react'
-
+import Input from '../../shared/FormElements/Input'
   const NewPost= ()=> {
     return (
-        <h2> New Post Page</h2>
+        <div>
+          <form>
+            <Input
+              element="input"
+              type="text"
+              placeholder="Title"
+              errorText= "Enter Valid Title"
+            />
+          </form>
+        </div>
     )
 }
 export default NewPost;
